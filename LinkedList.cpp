@@ -61,6 +61,7 @@ void LinkedList :: insertPosition(int pos, int newNum){
 
     currentNode->setLink(num);
     num->setLink(old);
+    printList();
 }
 
 bool LinkedList :: deletePosition(int pos){
@@ -77,6 +78,7 @@ bool LinkedList :: deletePosition(int pos){
     }
     Node* nextNextNode = currentNode->getLink()->getLink();
     currentNode->setLink(nextNextNode);
+    printList();
     return true;
 }
 
@@ -92,6 +94,7 @@ int LinkedList :: get(int pos){
         currentNode = nextNode;
         currentPosition++;
     }
+    printList();
     return currentNode->getData();
 }
 
@@ -106,6 +109,7 @@ int LinkedList :: search(int target){
         currentNode = currentNode->getLink();
         currentPosition++;
     }
+    printList();
     return -1;
 }
 

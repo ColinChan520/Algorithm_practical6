@@ -24,10 +24,10 @@ LinkedList :: LinkedList(int* array, int len){
             s->setLink(n);
         }
     }
+    printList();
 }
 
 LinkedList :: ~LinkedList(){
-    printList();
     Node* current = head;      
     while( current != nullptr)
     {
@@ -123,11 +123,11 @@ void LinkedList :: printList(){
     currentNode = head;
     
     while(currentNode != nullptr){
-        cout << currentNode->getData() << endl;
+        cout << currentNode->getData();
         currentNode = currentNode->getLink();
-        // if(currentNode != nullptr){
-        //     cout << " ";
-        // }
+        if(currentNode != nullptr){
+            cout << " ";
+        }
         currentPosition++;
     }
     cout << "]" << endl;

@@ -67,7 +67,6 @@ void LinkedList :: insertPosition(int pos, int newNum){
 
     currentNode->setLink(num);
     num->setLink(old);
-    printList();
 }
 
 bool LinkedList :: deletePosition(int pos){
@@ -117,17 +116,18 @@ int LinkedList :: search(int target){
 }
 
 void LinkedList :: printList(){
+    cout << "[";
     int currentPosition = 1;
     Node* currentNode = new Node;
     currentNode = head;
-    cout << "[";
+    
     while(currentNode != nullptr){
-    cout << currentNode->getData();
-    currentNode = currentNode->getLink();
-    if(currentNode != nullptr){
-        cout << " ";
-    }
-    currentPosition++;
+        cout << currentNode->getData() << endl;
+        currentNode = currentNode->getLink();
+        // if(currentNode != nullptr){
+        //     cout << " ";
+        // }
+        currentPosition++;
     }
     cout << "]" << endl;
 }

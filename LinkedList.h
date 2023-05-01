@@ -13,7 +13,7 @@ class LinkedList
     public:
     LinkedList();
     LinkedList(int* array, int len);
-    // ~LinkedList();
+    ~LinkedList();
     void insertPosition(int pos, int newNum);
     bool deletePosition(int pos);
     int get(int pos);

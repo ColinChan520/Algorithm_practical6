@@ -26,9 +26,15 @@ LinkedList :: LinkedList(int* array, int len){
     }
 }
 
-// LinkedList :: ~LinkedList(){
-//     head = nullptr;
-// }
+LinkedList :: ~LinkedList(){
+    Node* current = head;      
+    while( current != NULL )
+    {
+        Node* temp = current;
+        current = current->getLink();
+        delete temp;
+    }
+}
 
 void LinkedList :: insertPosition(int pos, int newNum){
     Node* num = new Node;

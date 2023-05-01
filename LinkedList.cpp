@@ -99,6 +99,9 @@ bool LinkedList :: deletePosition(int pos){
 
 int LinkedList :: get(int pos){
     int currentPosition = 1;
+    if(pos < 1){
+        return numeric_limits < int >::max();
+    }
     Node* currentNode = new Node;
     currentNode = head;
     while(currentPosition < pos ){

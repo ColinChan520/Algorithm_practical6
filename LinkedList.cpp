@@ -8,6 +8,7 @@ LinkedList :: LinkedList(){
 }
 
 LinkedList :: LinkedList(int* array, int len){
+    cout << "[";
     for(int i = 0; i < len; i++){
         Node *n = new Node;
         n->setData(array[i]);
@@ -37,7 +38,6 @@ LinkedList :: ~LinkedList(){
 }
 
 void LinkedList :: insertPosition(int pos, int newNum){
-    cout << "[";
     Node* num = new Node;
     num->setData(newNum);
     num->setLink(nullptr);

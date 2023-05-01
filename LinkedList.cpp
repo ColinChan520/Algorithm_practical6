@@ -73,6 +73,9 @@ void LinkedList :: insertPosition(int pos, int newNum){
 
 bool LinkedList :: deletePosition(int pos){
     int currentPosition = 1;
+    if(pos < 1){
+        return false;
+    }
     Node* currentNode = new Node;
     currentNode = head;
     while(currentPosition < pos -1){

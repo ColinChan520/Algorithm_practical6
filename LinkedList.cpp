@@ -37,6 +37,7 @@ LinkedList :: ~LinkedList(){
 }
 
 void LinkedList :: insertPosition(int pos, int newNum){
+    cout << "[";
     Node* num = new Node;
     num->setData(newNum);
     num->setLink(nullptr);

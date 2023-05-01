@@ -4,21 +4,21 @@
 using namespace std;
 
 LinkedList :: LinkedList(){
-    head = NULL;
+    head = nullptr;
 }
 
 LinkedList :: LinkedList(int* array, int len){
     for(int i = 0; i < len; i++){
         Node *n = new Node;
         n->setData(array[i]);
-        n->setLink(NULL);
+        n->setLink(nullptr);
 
-        if(head == NULL){
+        if(head == nullptr){
             head = n;
         }
         else{
             Node* s = head;
-            while(s->getLink() != NULL){
+            while(s->getLink() != nullptr){
                 s = s->getLink();
             }
             s->setLink(n);
@@ -27,13 +27,13 @@ LinkedList :: LinkedList(int* array, int len){
 }
 
 LinkedList :: ~LinkedList(){
-    head = NULL;
+    head = nullptr;
 }
 
 void LinkedList :: insertPosition(int pos, int newNum){
     Node* num = new Node;
     num->setData(newNum);
-    num->setLink(NULL);
+    num->setLink(nullptr);
 
     // <1
     if(pos <= 1){
@@ -47,7 +47,7 @@ void LinkedList :: insertPosition(int pos, int newNum){
     currentNode = head;
     while(currentPosition < pos -1){
         Node* nextNode = currentNode->getLink();
-        if(nextNode == NULL){
+        if(nextNode == nullptr){
             currentNode->setLink(num);
             return;
         }
@@ -70,7 +70,7 @@ bool LinkedList :: deletePosition(int pos){
     currentNode = head;
     while(currentPosition < pos -1){
         Node* nextNode = currentNode->getLink();
-        if(nextNode == NULL){
+        if(nextNode == nullptr){
             return false;
         }
         currentNode = nextNode;
@@ -78,7 +78,6 @@ bool LinkedList :: deletePosition(int pos){
     }
     Node* nextNextNode = currentNode->getLink()->getLink();
     currentNode->setLink(nextNextNode);
-    printList();
     return true;
 }
 
@@ -88,13 +87,12 @@ int LinkedList :: get(int pos){
     currentNode = head;
     while(currentPosition < pos ){
         Node* nextNode = currentNode->getLink();
-        if(nextNode == NULL){
+        if(nextNode == nullptr){
             return numeric_limits < int >::max();
         }
         currentNode = nextNode;
         currentPosition++;
     }
-    printList();
     return currentNode->getData();
 }
 
@@ -102,14 +100,13 @@ int LinkedList :: search(int target){
     int currentPosition = 1;
     Node* currentNode = new Node;
     currentNode = head;
-    while(currentNode != NULL){
+    while(currentNode != nullptr){
         if(currentNode->getData() == target){
             return currentPosition;
         }
         currentNode = currentNode->getLink();
         currentPosition++;
     }
-    printList();
     return -1;
 }
 
@@ -118,10 +115,10 @@ void LinkedList :: printList(){
     Node* currentNode = new Node;
     currentNode = head;
     cout << "[";
-    while(currentNode != NULL){
+    while(currentNode != nullptr){
     cout << currentNode->getData();
     currentNode = currentNode->getLink();
-    if(currentNode != NULL){
+    if(currentNode != nullptr){
         cout << " ";
     }
     currentPosition++;

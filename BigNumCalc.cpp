@@ -65,8 +65,12 @@ list<int> BigNumCalc :: sub(list<int> num1, list<int> num2){
     result.push_back(beginNum);
     result.reverse();
     list<int>::iterator it;
+    // remove 0 before the result number
     for (it = result.begin(); it != result.end(); ++it){
-        if(*it == 0){
+        if(it == prev(result.end())){
+            break;
+        }
+        else if(*it == 0){
             result.remove(*it);
         }
         else

@@ -76,6 +76,12 @@ bool LinkedList :: deletePosition(int pos){
     if(pos < 1){
         return false;
     }
+    else if (pos == 1)
+    {
+        head = head->getLink();
+        return true;
+    }
+    
     Node* currentNode = new Node;
     currentNode = head;
     while(currentPosition < pos -1){

@@ -26,9 +26,9 @@ LinkedList :: LinkedList(int* array, int len){
     }
 }
 
-LinkedList :: ~LinkedList(){
-    head = nullptr;
-}
+// LinkedList :: ~LinkedList(){
+//     head = nullptr;
+// }
 
 void LinkedList :: insertPosition(int pos, int newNum){
     Node* num = new Node;

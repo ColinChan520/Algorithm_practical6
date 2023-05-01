@@ -8,7 +8,6 @@ LinkedList :: LinkedList(){
 }
 
 LinkedList :: LinkedList(int* array, int len){
-    cout << "[";
     for(int i = 0; i < len; i++){
         Node *n = new Node;
         n->setData(array[i]);
@@ -28,8 +27,9 @@ LinkedList :: LinkedList(int* array, int len){
 }
 
 LinkedList :: ~LinkedList(){
+    printList();
     Node* current = head;      
-    while( current != NULL )
+    while( current != nullptr)
     {
         Node* temp = current;
         current = current->getLink();

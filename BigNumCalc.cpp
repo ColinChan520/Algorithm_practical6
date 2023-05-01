@@ -64,6 +64,17 @@ list<int> BigNumCalc :: sub(list<int> num1, list<int> num2){
     int beginNum = *currentNum1 - *currentNum2 - carry;
     result.push_back(beginNum);
     result.reverse();
+    list<int>::iterator it;
+    for (it = result.begin(); it != result.end(); ++it){
+        if(*it == 0){
+            result.remove(*it);
+        }
+        else
+        {
+          break;
+        }
+        
+    }
     return result;
 }
 

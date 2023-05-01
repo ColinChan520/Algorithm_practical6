@@ -24,7 +24,6 @@ LinkedList :: LinkedList(int* array, int len){
             s->setLink(n);
         }
     }
-    printList();
 }
 
 LinkedList :: ~LinkedList(){
@@ -118,18 +117,19 @@ int LinkedList :: search(int target){
 
 void LinkedList :: printList(){
     cout << "[";
-    int currentPosition = 1;
-    Node* currentNode = new Node;
-    currentNode = head;
+    cout << head->getData() <<endl;
+    // int currentPosition = 1;
+    // Node* currentNode = new Node;
+    // currentNode = head;
     
-    while(currentNode != nullptr){
-        cout << currentNode->getData();
-        currentNode = currentNode->getLink();
-        if(currentNode != nullptr){
-            cout << " ";
-        }
-        currentPosition++;
-    }
+    // while(currentNode != nullptr){
+    //     cout << currentNode->getData();
+    //     currentNode = currentNode->getLink();
+    //     if(currentNode != nullptr){
+    //         cout << " ";
+    //     }
+    //     currentPosition++;
+    // }
     cout << "]" << endl;
 }
 
